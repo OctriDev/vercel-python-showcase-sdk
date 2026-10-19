@@ -14,7 +14,7 @@ class CreateVercelCiTaskAnalysisResponse(BaseModel):
     model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True)
 
     analysis_id: str = Field(alias="analysisId")
-    status: Literal["pending", "completed", "failed"]
+    status: Literal["pending"] | Literal["completed"] | Literal["failed"]
 
     @model_validator(mode="before")
     @classmethod

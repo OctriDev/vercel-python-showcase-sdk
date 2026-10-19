@@ -193,7 +193,13 @@ class UpdateAttackChallengeModeResponse(BaseModel):
 class UpdateVercelCiRepositorySettingsResponse(BaseModel):
     model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True)
 
-    provider: Literal["bitbucket", "cursor-origin", "github", "gitlab", "vercel"]
+    provider: (
+        Literal["bitbucket"]
+        | Literal["cursor-origin"]
+        | Literal["github"]
+        | Literal["gitlab"]
+        | Literal["vercel"]
+    )
     organization_id: str = Field(alias="organizationId")
     repository: str
     ci_enabled: bool = Field(alias="ciEnabled")

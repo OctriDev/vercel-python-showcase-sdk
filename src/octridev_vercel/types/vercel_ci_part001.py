@@ -186,7 +186,7 @@ class GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperationVaria
 
     kind: Literal["deployment"]
     project_id: str = Field(alias="projectId")
-    target: Literal["production", "preview"]
+    target: Literal["production"] | Literal["preview"]
 
     @model_validator(mode="before")
     @classmethod
@@ -385,7 +385,7 @@ class ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant1(Ba
 
     kind: Literal["deployment"]
     project_id: str = Field(alias="projectId")
-    target: Literal["production", "preview"]
+    target: Literal["production"] | Literal["preview"]
 
     @model_validator(mode="before")
     @classmethod
