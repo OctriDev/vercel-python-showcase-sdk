@@ -3,7 +3,7 @@
 
 import importlib
 
-from .teams_part001 import (
+from .teams_invite_user_to_team import (
     InvitedTeamMember,
     TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItem,
     TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant0,
@@ -22,26 +22,7 @@ from .teams_part001 import (
     TeamLimitedSamlConnection,
     TeamLimitedSamlDirectory,
 )
-from .teams_part002 import (
-    ListTeamsResponseTeamsItem,
-    UpdateTeamsRequestDefaultProjectJobs,
-    UpdateTeamsRequestDefaultProjectJobsVariant0,
-    UpdateTeamsRequestDefaultProjectJobsVariant0Lint,
-    UpdateTeamsRequestDefaultProjectJobsVariant0Typecheck,
-    UpdateTeamsRequestDeploymentPolicy,
-    UpdateTeamsRequestDeploymentPolicyVariant0,
-    UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item,
-    UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemCustom,
-    UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemSystem,
-    UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0Item,
-    UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemCustom,
-    UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemSystem,
-    UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemGitlab,
-    UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemVariant0,
-    UpdateTeamsRequestNsnbConfig,
-    UpdateTeamsRequestNsnbConfigVariant0,
-)
-from .teams_part003 import (
+from .teams_shared import (
     Team,
     TeamBilling,
     TeamConnect,
@@ -78,6 +59,25 @@ from .teams_part003 import (
     TeamStrictDeploymentProtectionSettings,
     TeamStrictPasswordProtectionSettings,
     TeamStrictShareableLinks,
+)
+from .teams_update_team import (
+    ListTeamsResponseTeamsItem,
+    UpdateTeamRequestDefaultProjectJobs,
+    UpdateTeamRequestDefaultProjectJobsVariant0,
+    UpdateTeamRequestDefaultProjectJobsVariant0Lint,
+    UpdateTeamRequestDefaultProjectJobsVariant0Typecheck,
+    UpdateTeamRequestDeploymentPolicy,
+    UpdateTeamRequestDeploymentPolicyVariant0,
+    UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item,
+    UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemCustom,
+    UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemSystem,
+    UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item,
+    UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemCustom,
+    UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemSystem,
+    UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemGitlab,
+    UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemVariant0,
+    UpdateTeamRequestNsnbConfig,
+    UpdateTeamRequestNsnbConfigVariant0,
 )
 
 __all__ = [
@@ -135,42 +135,42 @@ __all__ = [
     "TeamStrictDeploymentProtectionSettings",
     "TeamStrictPasswordProtectionSettings",
     "TeamStrictShareableLinks",
-    "UpdateTeamsRequestDefaultProjectJobs",
-    "UpdateTeamsRequestDefaultProjectJobsVariant0",
-    "UpdateTeamsRequestDefaultProjectJobsVariant0Lint",
-    "UpdateTeamsRequestDefaultProjectJobsVariant0Typecheck",
-    "UpdateTeamsRequestDeploymentPolicy",
-    "UpdateTeamsRequestDeploymentPolicyVariant0",
-    "UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item",
-    "UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemCustom",
-    "UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemSystem",
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0Item",
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemCustom",
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemSystem",
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemGitlab",
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemVariant0",
-    "UpdateTeamsRequestNsnbConfig",
-    "UpdateTeamsRequestNsnbConfigVariant0",
+    "UpdateTeamRequestDefaultProjectJobs",
+    "UpdateTeamRequestDefaultProjectJobsVariant0",
+    "UpdateTeamRequestDefaultProjectJobsVariant0Lint",
+    "UpdateTeamRequestDefaultProjectJobsVariant0Typecheck",
+    "UpdateTeamRequestDeploymentPolicy",
+    "UpdateTeamRequestDeploymentPolicyVariant0",
+    "UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item",
+    "UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemCustom",
+    "UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemSystem",
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item",
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemCustom",
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemSystem",
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemGitlab",
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemVariant0",
+    "UpdateTeamRequestNsnbConfig",
+    "UpdateTeamRequestNsnbConfigVariant0",
 ]
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_teams_part002 = importlib.import_module(".teams_part002", __package__)
+_teams_update_team = importlib.import_module(".teams_update_team", __package__)
 
-_deferred_teams_part002: tuple[tuple[str, object], ...] = (("Team", Team),)
-for _name, _value in _deferred_teams_part002:
-    setattr(_teams_part002, _name, _value)
+_deferred_teams_update_team: tuple[tuple[str, object], ...] = (("Team", Team),)
+for _name, _value in _deferred_teams_update_team:
+    setattr(_teams_update_team, _name, _value)
 
-UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemSystem.model_rebuild()
-UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemCustom.model_rebuild()
-UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemVariant0.model_rebuild()
-UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemGitlab.model_rebuild()
-UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0Item.model_rebuild()
-UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemSystem.model_rebuild()
-UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemCustom.model_rebuild()
-UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item.model_rebuild()
-UpdateTeamsRequestDeploymentPolicyVariant0.model_rebuild()
-UpdateTeamsRequestNsnbConfigVariant0.model_rebuild()
-UpdateTeamsRequestDefaultProjectJobsVariant0Lint.model_rebuild()
-UpdateTeamsRequestDefaultProjectJobsVariant0Typecheck.model_rebuild()
-UpdateTeamsRequestDefaultProjectJobsVariant0.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemSystem.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemCustom.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemVariant0.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemGitlab.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemSystem.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemCustom.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item.model_rebuild()
+UpdateTeamRequestDeploymentPolicyVariant0.model_rebuild()
+UpdateTeamRequestNsnbConfigVariant0.model_rebuild()
+UpdateTeamRequestDefaultProjectJobsVariant0Lint.model_rebuild()
+UpdateTeamRequestDefaultProjectJobsVariant0Typecheck.model_rebuild()
+UpdateTeamRequestDefaultProjectJobsVariant0.model_rebuild()

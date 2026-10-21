@@ -452,19 +452,19 @@ from .types import (
     UpdateSandboxResources,
     UpdateSessionNetworkPolicyResponse,
     UpdateSharedEnvVariableResponse,
+    UpdateTeamDefaultDeploymentProtection,
+    UpdateTeamDefaultExpirationSettings,
+    UpdateTeamDefaultPassport,
     UpdateTeamMemberJoinedFrom,
     UpdateTeamMemberProjectsItem,
     UpdateTeamMemberResponse,
-    UpdateTeamsDefaultDeploymentProtection,
-    UpdateTeamsDefaultExpirationSettings,
-    UpdateTeamsDefaultPassport,
-    UpdateTeamsRemoteCaching,
-    UpdateTeamsResourceConfig,
-    UpdateTeamsSaml,
-    UpdateTeamsStrictConnectors,
-    UpdateTeamsStrictDeploymentProtectionSettings,
-    UpdateTeamsStrictPasswordProtectionSettings,
-    UpdateTeamsStrictShareableLinks,
+    UpdateTeamRemoteCaching,
+    UpdateTeamResourceConfig,
+    UpdateTeamSaml,
+    UpdateTeamStrictConnectors,
+    UpdateTeamStrictDeploymentProtectionSettings,
+    UpdateTeamStrictPasswordProtectionSettings,
+    UpdateTeamStrictShareableLinks,
     UpdateVercelCiRepositorySettingsResponse,
     UpdateVersionResponse,
     UploadArtifactResponse,
@@ -53868,7 +53868,7 @@ _SCHEMAS: dict[str, Any] = {
             {"type": "boolean"},
         ]
     },
-    "UpdateTeamsRequestDeploymentPolicy": {
+    "UpdateTeamRequestDeploymentPolicy": {
         "anyOf": [
             {
                 "type": "object",
@@ -54035,7 +54035,7 @@ _SCHEMAS: dict[str, Any] = {
             {"type": "string"},
         ]
     },
-    "UpdateTeamsRequestNsnbConfig": {
+    "UpdateTeamRequestNsnbConfig": {
         "anyOf": [
             {
                 "type": "object",
@@ -54045,7 +54045,7 @@ _SCHEMAS: dict[str, Any] = {
             {"type": "string"},
         ]
     },
-    "UpdateTeamsRequestDefaultProjectJobs": {
+    "UpdateTeamRequestDefaultProjectJobs": {
         "oneOf": [
             {
                 "type": "object",
@@ -102484,7 +102484,7 @@ _SCHEMAS: dict[str, Any] = {
         "type": "object",
         "properties": {"ssoUserId": {"python": "sso_user_id", "nullable": True}},
     },
-    "UpdateTeamsSaml": {
+    "UpdateTeamSaml": {
         "type": "object",
         "properties": {
             "enforced": {"python": "enforced", "type": "boolean"},
@@ -102510,11 +102510,11 @@ _SCHEMAS: dict[str, Any] = {
             },
         },
     },
-    "UpdateTeamsRemoteCaching": {
+    "UpdateTeamRemoteCaching": {
         "type": "object",
         "properties": {"enabled": {"python": "enabled", "type": "boolean"}},
     },
-    "UpdateTeamsDefaultDeploymentProtection": {
+    "UpdateTeamDefaultDeploymentProtection": {
         "type": "object",
         "properties": {
             "passwordProtection": {
@@ -102541,7 +102541,7 @@ _SCHEMAS: dict[str, Any] = {
             },
         },
     },
-    "UpdateTeamsDefaultPassport": {
+    "UpdateTeamDefaultPassport": {
         "type": "object",
         "nullable": True,
         "required": ["connectorId"],
@@ -102550,7 +102550,7 @@ _SCHEMAS: dict[str, Any] = {
             "deploymentType": {"python": "deployment_type", "type": "string"},
         },
     },
-    "UpdateTeamsDefaultExpirationSettings": {
+    "UpdateTeamDefaultExpirationSettings": {
         "type": "object",
         "properties": {
             "expiration": {"python": "expiration", "type": "string"},
@@ -102564,27 +102564,27 @@ _SCHEMAS: dict[str, Any] = {
             },
         },
     },
-    "UpdateTeamsStrictDeploymentProtectionSettings": {
+    "UpdateTeamStrictDeploymentProtectionSettings": {
         "type": "object",
         "required": ["enabled"],
         "properties": {"enabled": {"python": "enabled", "type": "boolean"}},
     },
-    "UpdateTeamsStrictShareableLinks": {
+    "UpdateTeamStrictShareableLinks": {
         "type": "object",
         "required": ["enabled"],
         "properties": {"enabled": {"python": "enabled", "type": "boolean"}},
     },
-    "UpdateTeamsStrictPasswordProtectionSettings": {
+    "UpdateTeamStrictPasswordProtectionSettings": {
         "type": "object",
         "required": ["enabled"],
         "properties": {"enabled": {"python": "enabled", "type": "boolean"}},
     },
-    "UpdateTeamsStrictConnectors": {
+    "UpdateTeamStrictConnectors": {
         "type": "object",
         "required": ["enabled"],
         "properties": {"enabled": {"python": "enabled", "type": "boolean"}},
     },
-    "UpdateTeamsResourceConfig": {
+    "UpdateTeamResourceConfig": {
         "type": "object",
         "properties": {
             "buildMachine": {
@@ -103101,16 +103101,16 @@ _MODEL_TYPES: dict[str, type[Any]] = {
     "RequestAccessToTeamJoinedFrom": RequestAccessToTeamJoinedFrom,
     "UpdateTeamMemberProjectsItem": UpdateTeamMemberProjectsItem,
     "UpdateTeamMemberJoinedFrom": UpdateTeamMemberJoinedFrom,
-    "UpdateTeamsSaml": UpdateTeamsSaml,
-    "UpdateTeamsRemoteCaching": UpdateTeamsRemoteCaching,
-    "UpdateTeamsDefaultDeploymentProtection": UpdateTeamsDefaultDeploymentProtection,
-    "UpdateTeamsDefaultPassport": UpdateTeamsDefaultPassport,
-    "UpdateTeamsDefaultExpirationSettings": UpdateTeamsDefaultExpirationSettings,
-    "UpdateTeamsStrictDeploymentProtectionSettings": UpdateTeamsStrictDeploymentProtectionSettings,
-    "UpdateTeamsStrictShareableLinks": UpdateTeamsStrictShareableLinks,
-    "UpdateTeamsStrictPasswordProtectionSettings": UpdateTeamsStrictPasswordProtectionSettings,
-    "UpdateTeamsStrictConnectors": UpdateTeamsStrictConnectors,
-    "UpdateTeamsResourceConfig": UpdateTeamsResourceConfig,
+    "UpdateTeamSaml": UpdateTeamSaml,
+    "UpdateTeamRemoteCaching": UpdateTeamRemoteCaching,
+    "UpdateTeamDefaultDeploymentProtection": UpdateTeamDefaultDeploymentProtection,
+    "UpdateTeamDefaultPassport": UpdateTeamDefaultPassport,
+    "UpdateTeamDefaultExpirationSettings": UpdateTeamDefaultExpirationSettings,
+    "UpdateTeamStrictDeploymentProtectionSettings": UpdateTeamStrictDeploymentProtectionSettings,
+    "UpdateTeamStrictShareableLinks": UpdateTeamStrictShareableLinks,
+    "UpdateTeamStrictPasswordProtectionSettings": UpdateTeamStrictPasswordProtectionSettings,
+    "UpdateTeamStrictConnectors": UpdateTeamStrictConnectors,
+    "UpdateTeamResourceConfig": UpdateTeamResourceConfig,
     "CreateTeamAttribution": CreateTeamAttribution,
     "DeleteTeamReasonsItem": DeleteTeamReasonsItem,
     "RequestDeleteReasonsItem": RequestDeleteReasonsItem,
@@ -106475,80 +106475,78 @@ def create_update_team_member_joined_from(
     return cast(UpdateTeamMemberJoinedFrom, _construct_model(value, "UpdateTeamMemberJoinedFrom"))
 
 
-def create_update_teams_saml(value: Mapping[str, object]) -> UpdateTeamsSaml:
-    """Construct one UpdateTeamsSaml after applying its schema constraints."""
-    return cast(UpdateTeamsSaml, _construct_model(value, "UpdateTeamsSaml"))
+def create_update_team_saml(value: Mapping[str, object]) -> UpdateTeamSaml:
+    """Construct one UpdateTeamSaml after applying its schema constraints."""
+    return cast(UpdateTeamSaml, _construct_model(value, "UpdateTeamSaml"))
 
 
-def create_update_teams_remote_caching(value: Mapping[str, object]) -> UpdateTeamsRemoteCaching:
-    """Construct one UpdateTeamsRemoteCaching after applying its schema constraints."""
-    return cast(UpdateTeamsRemoteCaching, _construct_model(value, "UpdateTeamsRemoteCaching"))
+def create_update_team_remote_caching(value: Mapping[str, object]) -> UpdateTeamRemoteCaching:
+    """Construct one UpdateTeamRemoteCaching after applying its schema constraints."""
+    return cast(UpdateTeamRemoteCaching, _construct_model(value, "UpdateTeamRemoteCaching"))
 
 
-def create_update_teams_default_deployment_protection(
+def create_update_team_default_deployment_protection(
     value: Mapping[str, object],
-) -> UpdateTeamsDefaultDeploymentProtection:
-    """Construct one UpdateTeamsDefaultDeploymentProtection after applying its schema constraints."""
+) -> UpdateTeamDefaultDeploymentProtection:
+    """Construct one UpdateTeamDefaultDeploymentProtection after applying its schema constraints."""
     return cast(
-        UpdateTeamsDefaultDeploymentProtection,
-        _construct_model(value, "UpdateTeamsDefaultDeploymentProtection"),
+        UpdateTeamDefaultDeploymentProtection,
+        _construct_model(value, "UpdateTeamDefaultDeploymentProtection"),
     )
 
 
-def create_update_teams_default_passport(value: Mapping[str, object]) -> UpdateTeamsDefaultPassport:
-    """Construct one UpdateTeamsDefaultPassport after applying its schema constraints."""
-    return cast(UpdateTeamsDefaultPassport, _construct_model(value, "UpdateTeamsDefaultPassport"))
+def create_update_team_default_passport(value: Mapping[str, object]) -> UpdateTeamDefaultPassport:
+    """Construct one UpdateTeamDefaultPassport after applying its schema constraints."""
+    return cast(UpdateTeamDefaultPassport, _construct_model(value, "UpdateTeamDefaultPassport"))
 
 
-def create_update_teams_default_expiration_settings(
+def create_update_team_default_expiration_settings(
     value: Mapping[str, object],
-) -> UpdateTeamsDefaultExpirationSettings:
-    """Construct one UpdateTeamsDefaultExpirationSettings after applying its schema constraints."""
+) -> UpdateTeamDefaultExpirationSettings:
+    """Construct one UpdateTeamDefaultExpirationSettings after applying its schema constraints."""
     return cast(
-        UpdateTeamsDefaultExpirationSettings,
-        _construct_model(value, "UpdateTeamsDefaultExpirationSettings"),
+        UpdateTeamDefaultExpirationSettings,
+        _construct_model(value, "UpdateTeamDefaultExpirationSettings"),
     )
 
 
-def create_update_teams_strict_deployment_protection_settings(
+def create_update_team_strict_deployment_protection_settings(
     value: Mapping[str, object],
-) -> UpdateTeamsStrictDeploymentProtectionSettings:
-    """Construct one UpdateTeamsStrictDeploymentProtectionSettings after applying its schema constraints."""
+) -> UpdateTeamStrictDeploymentProtectionSettings:
+    """Construct one UpdateTeamStrictDeploymentProtectionSettings after applying its schema constraints."""
     return cast(
-        UpdateTeamsStrictDeploymentProtectionSettings,
-        _construct_model(value, "UpdateTeamsStrictDeploymentProtectionSettings"),
+        UpdateTeamStrictDeploymentProtectionSettings,
+        _construct_model(value, "UpdateTeamStrictDeploymentProtectionSettings"),
     )
 
 
-def create_update_teams_strict_shareable_links(
+def create_update_team_strict_shareable_links(
     value: Mapping[str, object],
-) -> UpdateTeamsStrictShareableLinks:
-    """Construct one UpdateTeamsStrictShareableLinks after applying its schema constraints."""
+) -> UpdateTeamStrictShareableLinks:
+    """Construct one UpdateTeamStrictShareableLinks after applying its schema constraints."""
     return cast(
-        UpdateTeamsStrictShareableLinks, _construct_model(value, "UpdateTeamsStrictShareableLinks")
+        UpdateTeamStrictShareableLinks, _construct_model(value, "UpdateTeamStrictShareableLinks")
     )
 
 
-def create_update_teams_strict_password_protection_settings(
+def create_update_team_strict_password_protection_settings(
     value: Mapping[str, object],
-) -> UpdateTeamsStrictPasswordProtectionSettings:
-    """Construct one UpdateTeamsStrictPasswordProtectionSettings after applying its schema constraints."""
+) -> UpdateTeamStrictPasswordProtectionSettings:
+    """Construct one UpdateTeamStrictPasswordProtectionSettings after applying its schema constraints."""
     return cast(
-        UpdateTeamsStrictPasswordProtectionSettings,
-        _construct_model(value, "UpdateTeamsStrictPasswordProtectionSettings"),
+        UpdateTeamStrictPasswordProtectionSettings,
+        _construct_model(value, "UpdateTeamStrictPasswordProtectionSettings"),
     )
 
 
-def create_update_teams_strict_connectors(
-    value: Mapping[str, object],
-) -> UpdateTeamsStrictConnectors:
-    """Construct one UpdateTeamsStrictConnectors after applying its schema constraints."""
-    return cast(UpdateTeamsStrictConnectors, _construct_model(value, "UpdateTeamsStrictConnectors"))
+def create_update_team_strict_connectors(value: Mapping[str, object]) -> UpdateTeamStrictConnectors:
+    """Construct one UpdateTeamStrictConnectors after applying its schema constraints."""
+    return cast(UpdateTeamStrictConnectors, _construct_model(value, "UpdateTeamStrictConnectors"))
 
 
-def create_update_teams_resource_config(value: Mapping[str, object]) -> UpdateTeamsResourceConfig:
-    """Construct one UpdateTeamsResourceConfig after applying its schema constraints."""
-    return cast(UpdateTeamsResourceConfig, _construct_model(value, "UpdateTeamsResourceConfig"))
+def create_update_team_resource_config(value: Mapping[str, object]) -> UpdateTeamResourceConfig:
+    """Construct one UpdateTeamResourceConfig after applying its schema constraints."""
+    return cast(UpdateTeamResourceConfig, _construct_model(value, "UpdateTeamResourceConfig"))
 
 
 def create_create_team_attribution(value: Mapping[str, object]) -> CreateTeamAttribution:
@@ -107033,19 +107031,19 @@ __all__ = [
     "create_update_sandbox_resources",
     "create_update_session_network_policy_response",
     "create_update_shared_env_variable_response",
+    "create_update_team_default_deployment_protection",
+    "create_update_team_default_expiration_settings",
+    "create_update_team_default_passport",
     "create_update_team_member_joined_from",
     "create_update_team_member_projects_item",
     "create_update_team_member_response",
-    "create_update_teams_default_deployment_protection",
-    "create_update_teams_default_expiration_settings",
-    "create_update_teams_default_passport",
-    "create_update_teams_remote_caching",
-    "create_update_teams_resource_config",
-    "create_update_teams_saml",
-    "create_update_teams_strict_connectors",
-    "create_update_teams_strict_deployment_protection_settings",
-    "create_update_teams_strict_password_protection_settings",
-    "create_update_teams_strict_shareable_links",
+    "create_update_team_remote_caching",
+    "create_update_team_resource_config",
+    "create_update_team_saml",
+    "create_update_team_strict_connectors",
+    "create_update_team_strict_deployment_protection_settings",
+    "create_update_team_strict_password_protection_settings",
+    "create_update_team_strict_shareable_links",
     "create_update_vercel_ci_repository_settings_response",
     "create_update_version_response",
     "create_upload_artifact_response",

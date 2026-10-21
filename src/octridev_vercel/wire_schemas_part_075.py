@@ -221,14 +221,14 @@ WIRE_SCHEMAS_PART_75: dict[str, tuple[Any, dict[str, tuple[str, str | None]]]] =
             "max_delay_hours": ("maxDelayHours", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0": (
+    "UpdateTeamRequestDeploymentPolicyVariant0": (
         None,
         {
             "git_sources": ("gitSources", None),
             "deployment_sources": ("deploymentSources", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0Item": (
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item": (
         None,
         {
             "enabled": ("enabled", None),
@@ -236,7 +236,7 @@ WIRE_SCHEMAS_PART_75: dict[str, tuple[Any, dict[str, tuple[str, str | None]]]] =
             "sources": ("sources", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item": (
+    "UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item": (
         None,
         {
             "enabled": ("enabled", None),
@@ -244,21 +244,21 @@ WIRE_SCHEMAS_PART_75: dict[str, tuple[Any, dict[str, tuple[str, str | None]]]] =
             "sources": ("sources", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemSystem": (
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemSystem": (
         None,
         {
             "type": ("type", None),
             "target": ("target", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemCustom": (
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemEnvironmentsItemCustom": (
         None,
         {
             "type": ("type", None),
             "environment_id": ("environmentId", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemVariant0": (
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemVariant0": (
         None,
         {
             "provider": ("provider", None),
@@ -266,7 +266,7 @@ WIRE_SCHEMAS_PART_75: dict[str, tuple[Any, dict[str, tuple[str, str | None]]]] =
             "repo": ("repo", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemGitlab": (
+    "UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemSourcesItemGitlab": (
         None,
         {
             "provider": ("provider", None),
@@ -274,40 +274,40 @@ WIRE_SCHEMAS_PART_75: dict[str, tuple[Any, dict[str, tuple[str, str | None]]]] =
             "project": ("project", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemSystem": (
+    "UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemSystem": (
         None,
         {
             "type": ("type", None),
             "target": ("target", None),
         },
     ),
-    "UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemCustom": (
+    "UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemEnvironmentsItemCustom": (
         None,
         {
             "type": ("type", None),
             "environment_id": ("environmentId", None),
         },
     ),
-    "UpdateTeamsRequestNsnbConfigVariant0": (
+    "UpdateTeamRequestNsnbConfigVariant0": (
         None,
         {
             "preference": ("preference", None),
         },
     ),
-    "UpdateTeamsRequestDefaultProjectJobsVariant0": (
+    "UpdateTeamRequestDefaultProjectJobsVariant0": (
         None,
         {
-            "lint": ("lint", "UpdateTeamsRequestDefaultProjectJobsVariant0Lint"),
-            "typecheck": ("typecheck", "UpdateTeamsRequestDefaultProjectJobsVariant0Typecheck"),
+            "lint": ("lint", "UpdateTeamRequestDefaultProjectJobsVariant0Lint"),
+            "typecheck": ("typecheck", "UpdateTeamRequestDefaultProjectJobsVariant0Typecheck"),
         },
     ),
-    "UpdateTeamsRequestDefaultProjectJobsVariant0Lint": (
+    "UpdateTeamRequestDefaultProjectJobsVariant0Lint": (
         None,
         {
             "targets": ("targets", None),
         },
     ),
-    "UpdateTeamsRequestDefaultProjectJobsVariant0Typecheck": (
+    "UpdateTeamRequestDefaultProjectJobsVariant0Typecheck": (
         None,
         {
             "targets": ("targets", None),

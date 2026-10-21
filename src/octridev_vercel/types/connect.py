@@ -3,13 +3,88 @@
 
 import importlib
 
-from .connect_part001 import (
+from .connect_create_connector import (
+    ConnectCreateConnectorRequestTriggerDestination,
+    ConnectCreateConnectorRequestTriggerDestinationVariant0,
+    ConnectCreateConnectorRequestTriggerDestinationVariant1,
+    ConnectCreateConnectorRequestTriggerDestinationVariant2,
+    CreateConnectorAuthorizationRequestRequestSubject,
+    CreateConnectorAuthorizationRequestRequestSubjectVariant0,
+    CreateConnectorAuthorizationRequestRequestSubjectVariant1,
+    CreateConnectorAuthorizationRequestRequestSubjectVariant2,
+    CreateConnectorAuthorizationRequestRequestSubjectVariant3,
+    CreateConnectorAuthorizationRequestRequestSubjectVariant4,
+    GetConnectorTokenRequestSubject,
+    GetConnectorTokenRequestSubjectVariant0,
+    GetConnectorTokenRequestSubjectVariant1,
+    GetConnectorTokenRequestSubjectVariant2,
+    GetConnectorTokenRequestSubjectVariant3,
+    GetConnectorTokenRequestSubjectVariant4,
+)
+from .connect_create_connector2 import (
+    ConnectConnectorCreateDataRequest,
+    ConnectConnectorCreateDataRequestVariant0,
+    ConnectConnectorCreateDataRequestVariant0ClientAssertion,
+    ConnectConnectorCreateDataRequestVariant0ClientCredentials,
+    ConnectConnectorCreateDataRequestVariant0ForwardedClaims,
+    ConnectConnectorCreateDataRequestVariant0JwtBearer,
+    ConnectConnectorCreateDataRequestVariant0RefreshTokens,
+    ConnectConnectorCreateDataRequestVariant0ServerConfig,
+    ConnectConnectorCreateDataRequestVariant0ServerConfigJwks,
+    ConnectConnectorCreateDataRequestVariant0ServerConfigJwksKeysItem,
+    ConnectConnectorCreateDataRequestVariant0UserAuthorization,
+    ConnectConnectorCreateDataRequestVariant1,
+    ConnectConnectorCreateDataRequestVariant10,
+    ConnectConnectorCreateDataRequestVariant1ValuesItem,
+    ConnectConnectorCreateDataRequestVariant2,
+    ConnectConnectorCreateDataRequestVariant2Owner,
+    ConnectConnectorCreateDataRequestVariant3,
+    ConnectConnectorCreateDataRequestVariant3Application,
+    ConnectConnectorCreateDataRequestVariant3OwnerOrganization,
+    ConnectConnectorCreateDataRequestVariant4,
+    ConnectConnectorCreateDataRequestVariant5,
+    ConnectConnectorCreateDataRequestVariant6,
+    ConnectConnectorCreateDataRequestVariant7,
+    ConnectConnectorCreateDataRequestVariant7ShortcutsItem,
+    ConnectConnectorCreateDataRequestVariant7SlackTeam,
+    ConnectConnectorCreateDataRequestVariant7SlashCommandsItem,
+    ConnectConnectorCreateDataRequestVariant8,
+    ConnectConnectorCreateDataRequestVariant9,
+)
+from .connect_replace_connector_trigger_destinations import (
+    ConnectConnectorCreatedBy,
+    ConnectConnectorCreatedByVariant0,
+    ConnectConnectorCreatedByVariant1,
+    ConnectConnectorCreateResultCreatedBy,
+    ConnectConnectorCreateResultCreatedByVariant0,
+    ConnectConnectorCreateResultCreatedByVariant1,
+    ConnectConnectorCreateResultUpdatedBy,
+    ConnectConnectorCreateResultUpdatedByVariant0,
+    ConnectConnectorCreateResultUpdatedByVariant1,
+    ConnectConnectorProjectConnectionList,
+    ConnectConnectorUpdatedBy,
+    ConnectConnectorUpdatedByVariant0,
+    ConnectConnectorUpdatedByVariant1,
+    ConnectEnvironment,
+    ConnectError,
+    ConnectErrorError,
+    ConnectProjectConnection,
+    ConnectProjectConnectionProject,
+    ConnectProjectConnectionProjectCustomEnvironmentsItem,
+    ConnectProjectConnectorConnectionList,
+    ConnectTriggerDestinationInput,
+    ConnectTriggerDestinationInputVariant0,
+    ConnectTriggerDestinationInputVariant1,
+    ConnectTriggerDestinationInputVariant2,
+    ConnectUpsertProjectConnectionRequest,
+)
+from .connect_shared import (
     ConnectConnectorList,
     ConnectPagination,
     ConnectTriggerConfiguration,
     ConnectTriggerDestination,
 )
-from .connect_part002 import (
+from .connect_shared2 import (
     ConnectConnectorCreateData,
     ConnectConnectorCreateDataVariant0,
     ConnectConnectorCreateDataVariant0ClientAssertion,
@@ -39,13 +114,7 @@ from .connect_part002 import (
     ConnectConnectorCreateDataVariant8,
     ConnectConnectorCreateDataVariant9,
 )
-from .connect_part003 import (
-    ConnectConnectorUpdateResult,
-    ConnectReconsent,
-    ConnectServiceSync,
-    ConnectServiceSyncError,
-)
-from .connect_part004 import (
+from .connect_shared3 import (
     ConnectConnectorUpdateData,
     ConnectConnectorUpdateDataVariant0,
     ConnectConnectorUpdateDataVariant0ClientAssertion,
@@ -76,82 +145,30 @@ from .connect_part004 import (
     ConnectConnectorUpdateDataVariant8,
     ConnectConnectorUpdateDataVariant9,
 )
-from .connect_part005 import (
-    ConnectConnectorCreatedBy,
-    ConnectConnectorCreatedByVariant0,
-    ConnectConnectorCreatedByVariant1,
-    ConnectConnectorCreateResultCreatedBy,
-    ConnectConnectorCreateResultCreatedByVariant0,
-    ConnectConnectorCreateResultCreatedByVariant1,
-    ConnectConnectorCreateResultUpdatedBy,
-    ConnectConnectorCreateResultUpdatedByVariant0,
-    ConnectConnectorCreateResultUpdatedByVariant1,
-    ConnectConnectorProjectConnectionList,
-    ConnectConnectorUpdatedBy,
-    ConnectConnectorUpdatedByVariant0,
-    ConnectConnectorUpdatedByVariant1,
-    ConnectEnvironment,
-    ConnectError,
-    ConnectErrorError,
-    ConnectProjectConnection,
-    ConnectProjectConnectionProject,
-    ConnectProjectConnectionProjectCustomEnvironmentsItem,
-    ConnectProjectConnectorConnectionList,
-    ConnectTriggerDestinationInput,
-    ConnectTriggerDestinationInputVariant0,
-    ConnectTriggerDestinationInputVariant1,
-    ConnectTriggerDestinationInputVariant2,
-    ConnectUpsertProjectConnectionRequest,
+from .connect_shared4 import (
+    ConnectConnector,
+    ConnectConnectorAppTokens,
+    ConnectConnectorCreateResult,
+    ConnectConnectorCreateResultAppTokens,
+    ConnectConnectorCreateResultManaged,
+    ConnectConnectorCreateResultUserTokens,
+    ConnectConnectorManaged,
+    ConnectConnectorUserTokens,
+    ConnectReplaceTriggerDestinationsRequest,
+    ConnectUpdateConnectorRequest,
 )
-from .connect_part006 import (
-    ConnectCreateConnectorRequestTriggerDestination,
-    ConnectCreateConnectorRequestTriggerDestinationVariant0,
-    ConnectCreateConnectorRequestTriggerDestinationVariant1,
-    ConnectCreateConnectorRequestTriggerDestinationVariant2,
-    CreateConnectorAuthorizationRequestRequestSubject,
-    CreateConnectorAuthorizationRequestRequestSubjectVariant0,
-    CreateConnectorAuthorizationRequestRequestSubjectVariant1,
-    CreateConnectorAuthorizationRequestRequestSubjectVariant2,
-    CreateConnectorAuthorizationRequestRequestSubjectVariant3,
-    CreateConnectorAuthorizationRequestRequestSubjectVariant4,
-    GetConnectorTokenRequestSubject,
-    GetConnectorTokenRequestSubjectVariant0,
-    GetConnectorTokenRequestSubjectVariant1,
-    GetConnectorTokenRequestSubjectVariant2,
-    GetConnectorTokenRequestSubjectVariant3,
-    GetConnectorTokenRequestSubjectVariant4,
+from .connect_shared5 import (
+    ConnectCreateConnectorRequest,
+    ConnectCreateConnectorRequestRequest,
+    ConnectUpdateConnectorRequestRequest,
 )
-from .connect_part007 import (
-    ConnectConnectorCreateDataRequest,
-    ConnectConnectorCreateDataRequestVariant0,
-    ConnectConnectorCreateDataRequestVariant0ClientAssertion,
-    ConnectConnectorCreateDataRequestVariant0ClientCredentials,
-    ConnectConnectorCreateDataRequestVariant0ForwardedClaims,
-    ConnectConnectorCreateDataRequestVariant0JwtBearer,
-    ConnectConnectorCreateDataRequestVariant0RefreshTokens,
-    ConnectConnectorCreateDataRequestVariant0ServerConfig,
-    ConnectConnectorCreateDataRequestVariant0ServerConfigJwks,
-    ConnectConnectorCreateDataRequestVariant0ServerConfigJwksKeysItem,
-    ConnectConnectorCreateDataRequestVariant0UserAuthorization,
-    ConnectConnectorCreateDataRequestVariant1,
-    ConnectConnectorCreateDataRequestVariant10,
-    ConnectConnectorCreateDataRequestVariant1ValuesItem,
-    ConnectConnectorCreateDataRequestVariant2,
-    ConnectConnectorCreateDataRequestVariant2Owner,
-    ConnectConnectorCreateDataRequestVariant3,
-    ConnectConnectorCreateDataRequestVariant3Application,
-    ConnectConnectorCreateDataRequestVariant3OwnerOrganization,
-    ConnectConnectorCreateDataRequestVariant4,
-    ConnectConnectorCreateDataRequestVariant5,
-    ConnectConnectorCreateDataRequestVariant6,
-    ConnectConnectorCreateDataRequestVariant7,
-    ConnectConnectorCreateDataRequestVariant7ShortcutsItem,
-    ConnectConnectorCreateDataRequestVariant7SlackTeam,
-    ConnectConnectorCreateDataRequestVariant7SlashCommandsItem,
-    ConnectConnectorCreateDataRequestVariant8,
-    ConnectConnectorCreateDataRequestVariant9,
+from .connect_update_connector import (
+    ConnectConnectorUpdateResult,
+    ConnectReconsent,
+    ConnectServiceSync,
+    ConnectServiceSyncError,
 )
-from .connect_part008 import (
+from .connect_update_connector2 import (
     ConnectConnectorUpdateDataRequest,
     ConnectConnectorUpdateDataRequestVariant0,
     ConnectConnectorUpdateDataRequestVariant0ClientAssertion,
@@ -181,23 +198,6 @@ from .connect_part008 import (
     ConnectConnectorUpdateDataRequestVariant7,
     ConnectConnectorUpdateDataRequestVariant8,
     ConnectConnectorUpdateDataRequestVariant9,
-)
-from .connect_part009 import (
-    ConnectConnector,
-    ConnectConnectorAppTokens,
-    ConnectConnectorCreateResult,
-    ConnectConnectorCreateResultAppTokens,
-    ConnectConnectorCreateResultManaged,
-    ConnectConnectorCreateResultUserTokens,
-    ConnectConnectorManaged,
-    ConnectConnectorUserTokens,
-    ConnectReplaceTriggerDestinationsRequest,
-    ConnectUpdateConnectorRequest,
-)
-from .connect_part010 import (
-    ConnectCreateConnectorRequest,
-    ConnectCreateConnectorRequestRequest,
-    ConnectUpdateConnectorRequestRequest,
 )
 
 __all__ = [
@@ -381,26 +381,24 @@ __all__ = [
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_connect_part001 = importlib.import_module(".connect_part001", __package__)
+_connect_shared = importlib.import_module(".connect_shared", __package__)
 
-_deferred_connect_part001: tuple[tuple[str, object], ...] = (
-    ("ConnectConnector", ConnectConnector),
-)
-for _name, _value in _deferred_connect_part001:
-    setattr(_connect_part001, _name, _value)
+_deferred_connect_shared: tuple[tuple[str, object], ...] = (("ConnectConnector", ConnectConnector),)
+for _name, _value in _deferred_connect_shared:
+    setattr(_connect_shared, _name, _value)
 
 ConnectTriggerDestination.model_rebuild()
 ConnectTriggerConfiguration.model_rebuild()
 ConnectPagination.model_rebuild()
 ConnectConnectorList.model_rebuild()
 
-_connect_part003 = importlib.import_module(".connect_part003", __package__)
+_connect_update_connector = importlib.import_module(".connect_update_connector", __package__)
 
-_deferred_connect_part003: tuple[tuple[str, object], ...] = (
+_deferred_connect_update_connector: tuple[tuple[str, object], ...] = (
     ("ConnectConnector", ConnectConnector),
 )
-for _name, _value in _deferred_connect_part003:
-    setattr(_connect_part003, _name, _value)
+for _name, _value in _deferred_connect_update_connector:
+    setattr(_connect_update_connector, _name, _value)
 
 ConnectReconsent.model_rebuild()
 ConnectServiceSyncError.model_rebuild()

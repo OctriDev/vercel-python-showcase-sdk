@@ -35,10 +35,10 @@ from ..methods.teams import (
     request_access_to_team_sync,
     update_microfrontends_group,
     update_microfrontends_group_sync,
+    update_team,
     update_team_member,
     update_team_member_sync,
-    update_teams,
-    update_teams_sync,
+    update_team_sync,
 )
 
 
@@ -60,8 +60,8 @@ class _TeamsNamespace:
         self.remove_member.__doc__ = remove_team_member_sync.__doc__
         self.get = partial(get_teams_sync, config)
         self.get.__doc__ = get_teams_sync.__doc__
-        self.update = partial(update_teams_sync, config)
-        self.update.__doc__ = update_teams_sync.__doc__
+        self.update = partial(update_team_sync, config)
+        self.update.__doc__ = update_team_sync.__doc__
         self.list = partial(list_teams_sync, config)
         self.list.__doc__ = list_teams_sync.__doc__
         self.create = partial(create_team_sync, config)
@@ -96,8 +96,8 @@ class _AsyncTeamsNamespace:
         self.remove_member.__doc__ = remove_team_member.__doc__
         self.get = partial(get_teams, config)
         self.get.__doc__ = get_teams.__doc__
-        self.update = partial(update_teams, config)
-        self.update.__doc__ = update_teams.__doc__
+        self.update = partial(update_team, config)
+        self.update.__doc__ = update_team.__doc__
         self.list = partial(list_teams, config)
         self.list.__doc__ = list_teams.__doc__
         self.create = partial(create_team, config)
