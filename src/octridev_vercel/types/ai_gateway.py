@@ -3,7 +3,7 @@
 
 import importlib
 
-from .ai_gateway_part001 import (
+from .ai_gateway_shared import (
     AiGatewayBudget,
     AiGatewayBudgetDefault,
     AiGatewayBudgetDefaultList,
@@ -29,7 +29,7 @@ from .ai_gateway_part001 import (
     AiGatewayVirtualModelConfigModelsItemVariant2,
     GetAiGatewayVirtualModelConfigResponse,
 )
-from .ai_gateway_part002 import (
+from .ai_gateway_shared2 import (
     AiGatewayVirtualModelConfig,
     AiGatewayVirtualModelConfigInferenceRegion,
     AiGatewayVirtualModelConfigInferenceRegionProvidersValue,
@@ -71,13 +71,13 @@ __all__ = [
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_ai_gateway_part001 = importlib.import_module(".ai_gateway_part001", __package__)
+_ai_gateway_shared = importlib.import_module(".ai_gateway_shared", __package__)
 
-_deferred_ai_gateway_part001: tuple[tuple[str, object], ...] = (
+_deferred_ai_gateway_shared: tuple[tuple[str, object], ...] = (
     ("AiGatewayVirtualModelConfig", AiGatewayVirtualModelConfig),
 )
-for _name, _value in _deferred_ai_gateway_part001:
-    setattr(_ai_gateway_part001, _name, _value)
+for _name, _value in _deferred_ai_gateway_shared:
+    setattr(_ai_gateway_shared, _name, _value)
 
 AiGatewayEvaluationFallbackConditionVariant0.model_rebuild()
 AiGatewayEvaluationFallbackConditionVariant1.model_rebuild()

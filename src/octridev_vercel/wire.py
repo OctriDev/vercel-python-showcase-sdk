@@ -3204,7 +3204,7 @@ _RESPONSE_ENUM_SCHEMAS: dict[str, object] = {
             {"properties": {"type": {"enum": ["cursor-origin"]}}},
         ]
     },
-    "UpdateTeamsRequestDeploymentPolicy": {
+    "UpdateTeamRequestDeploymentPolicy": {
         "anyOf": [
             {
                 "properties": {

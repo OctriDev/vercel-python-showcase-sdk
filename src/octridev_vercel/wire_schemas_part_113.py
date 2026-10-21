@@ -260,26 +260,26 @@ WIRE_SCHEMAS_PART_113: dict[str, tuple[Any, dict[str, tuple[str, str | None]]]] 
             "permanent": ("permanent", None),
         },
     ),
-    "UpdateTeamsSamlRolesValueVariant1": (
+    "UpdateTeamSamlRolesValueVariant1": (
         None,
         {
             "access_group_id": ("accessGroupId", None),
         },
     ),
-    "UpdateTeamsDefaultDeploymentProtectionPasswordProtection": (
+    "UpdateTeamDefaultDeploymentProtectionPasswordProtection": (
         None,
         {
             "deployment_type": ("deploymentType", None),
             "password": ("password", None),
         },
     ),
-    "UpdateTeamsDefaultDeploymentProtectionSsoProtection": (
+    "UpdateTeamDefaultDeploymentProtectionSsoProtection": (
         None,
         {
             "deployment_type": ("deploymentType", None),
         },
     ),
-    "UpdateTeamsResourceConfigBuildMachine": (
+    "UpdateTeamResourceConfigBuildMachine": (
         None,
         {
             "default": ("default", None),

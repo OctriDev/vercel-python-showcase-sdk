@@ -200,34 +200,34 @@ WIRE_SCHEMAS_PART_10: dict[str, tuple[Any, dict[str, tuple[str, str | None]]]] =
             "sso_user_id": ("ssoUserId", None),
         },
     ),
-    "UpdateTeamsSaml": (
+    "UpdateTeamSaml": (
         None,
         {
             "enforced": ("enforced", None),
             "roles": ("roles", None),
         },
     ),
-    "UpdateTeamsRemoteCaching": (
+    "UpdateTeamRemoteCaching": (
         None,
         {
             "enabled": ("enabled", None),
         },
     ),
-    "UpdateTeamsDefaultDeploymentProtection": (
+    "UpdateTeamDefaultDeploymentProtection": (
         None,
         {
             "password_protection": ("passwordProtection", None),
             "sso_protection": ("ssoProtection", None),
         },
     ),
-    "UpdateTeamsDefaultPassport": (
+    "UpdateTeamDefaultPassport": (
         None,
         {
             "connector_id": ("connectorId", None),
             "deployment_type": ("deploymentType", None),
         },
     ),
-    "UpdateTeamsDefaultExpirationSettings": (
+    "UpdateTeamDefaultExpirationSettings": (
         None,
         {
             "expiration": ("expiration", None),
@@ -238,34 +238,34 @@ WIRE_SCHEMAS_PART_10: dict[str, tuple[Any, dict[str, tuple[str, str | None]]]] =
             "acknowledge_storage_billing": ("acknowledgeStorageBilling", None),
         },
     ),
-    "UpdateTeamsStrictDeploymentProtectionSettings": (
+    "UpdateTeamStrictDeploymentProtectionSettings": (
         None,
         {
             "enabled": ("enabled", None),
         },
     ),
-    "UpdateTeamsStrictShareableLinks": (
+    "UpdateTeamStrictShareableLinks": (
         None,
         {
             "enabled": ("enabled", None),
         },
     ),
-    "UpdateTeamsStrictPasswordProtectionSettings": (
+    "UpdateTeamStrictPasswordProtectionSettings": (
         None,
         {
             "enabled": ("enabled", None),
         },
     ),
-    "UpdateTeamsStrictConnectors": (
+    "UpdateTeamStrictConnectors": (
         None,
         {
             "enabled": ("enabled", None),
         },
     ),
-    "UpdateTeamsResourceConfig": (
+    "UpdateTeamResourceConfig": (
         None,
         {
-            "build_machine": ("buildMachine", "UpdateTeamsResourceConfigBuildMachine"),
+            "build_machine": ("buildMachine", "UpdateTeamResourceConfigBuildMachine"),
         },
     ),
     "CreateTeamAttribution": (

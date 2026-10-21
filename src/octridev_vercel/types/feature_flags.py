@@ -3,7 +3,7 @@
 
 import importlib
 
-from .feature_flags_part001 import (
+from .feature_flags_shared import (
     Flag,
     FlagEnvironmentsValue,
     FlagEnvironmentsValueFallthroughExperiment,
@@ -36,7 +36,7 @@ from .feature_flags_part001 import (
     FlagMetadataCreator,
     FlagVariantsItem,
 )
-from .feature_flags_part002 import (
+from .feature_flags_shared2 import (
     FlagsSdkKeyWithSecrets,
     MarketplaceFlag,
     SegmentDataRulesItemConditionsItemLhs,
@@ -65,7 +65,7 @@ from .feature_flags_part002 import (
     UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeSplit,
     UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeSplitBase,
 )
-from .feature_flags_part003 import (
+from .feature_flags_shared3 import (
     CreateFlagSegmentRequestDataRulesItemConditionsItemLhs,
     CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0,
     CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1,
@@ -107,7 +107,7 @@ from .feature_flags_part003 import (
     UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0ItemsItemVariant1,
     UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1,
 )
-from .feature_flags_part004 import (
+from .feature_flags_update_flag_segment import (
     Segment,
     SegmentData,
     SegmentDataExcludeValueValueItem,
@@ -239,11 +239,11 @@ __all__ = [
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_feature_flags_part002 = importlib.import_module(".feature_flags_part002", __package__)
+_feature_flags_shared2 = importlib.import_module(".feature_flags_shared2", __package__)
 
-_deferred_feature_flags_part002: tuple[tuple[str, object], ...] = (("Segment", Segment),)
-for _name, _value in _deferred_feature_flags_part002:
-    setattr(_feature_flags_part002, _name, _value)
+_deferred_feature_flags_shared2: tuple[tuple[str, object], ...] = (("Segment", Segment),)
+for _name, _value in _deferred_feature_flags_shared2:
+    setattr(_feature_flags_shared2, _name, _value)
 
 MarketplaceFlag.model_rebuild()
 FlagsSdkKeyWithSecrets.model_rebuild()
