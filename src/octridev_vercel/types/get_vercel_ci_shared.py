@@ -15,13 +15,7 @@ from ..validation import validate_required
 class GetVercelCiRepositorySettingsResponse(BaseModel):
     model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True)
 
-    provider: (
-        Literal["bitbucket"]
-        | Literal["cursor-origin"]
-        | Literal["github"]
-        | Literal["gitlab"]
-        | Literal["vercel"]
-    )
+    provider: Literal["bitbucket", "cursor-origin", "github", "gitlab", "vercel"]
     organization_id: str = Field(alias="organizationId")
     repository: str
     ci_enabled: bool = Field(alias="ciEnabled")
@@ -43,7 +37,7 @@ class GetVercelCiTaskAnalysisResponse(BaseModel):
     model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True)
 
     analysis_id: str = Field(alias="analysisId")
-    status: Literal["pending"] | Literal["completed"] | Literal["failed"]
+    status: Literal["pending", "completed", "failed"]
     failure_reason: str | NotGiven = Field(NOT_GIVEN, alias="failureReason")
 
     @model_validator(mode="before")
@@ -59,7 +53,7 @@ class GetVercelCiJobDefinitionResponseJobDefinition(BaseModel):
     invocation_id: str = Field(alias="invocationId")
     invocation_attempt: float = Field(alias="invocationAttempt")
     job_definition_id: str = Field(alias="jobDefinitionId")
-    kind: Literal["command"] | Literal["turbo"]
+    kind: Literal["command", "turbo"]
     name: str
     command: str
     created_at: float = Field(alias="createdAt")

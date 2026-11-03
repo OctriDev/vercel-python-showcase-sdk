@@ -78,7 +78,7 @@ class ListVercelCiJobDefinitionsResponseJobDefinitionsItem(BaseModel):
     invocation_id: str = Field(alias="invocationId")
     invocation_attempt: float = Field(alias="invocationAttempt")
     job_definition_id: str = Field(alias="jobDefinitionId")
-    kind: Literal["command"] | Literal["turbo"]
+    kind: Literal["command", "turbo"]
     name: str
     command: str
     created_at: float = Field(alias="createdAt")
@@ -193,9 +193,7 @@ class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCreated(BaseMo
     model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True)
 
     names: list[str]
-    source: (
-        Literal["turbo-json"] | Literal["vercel-ci-config"] | Literal["project-settings"] | NotGiven
-    ) = NOT_GIVEN
+    source: Literal["turbo-json", "vercel-ci-config", "project-settings"] | NotGiven = NOT_GIVEN
     scheduled_at: float | NotGiven = Field(NOT_GIVEN, alias="scheduledAt")
 
     @model_validator(mode="before")
@@ -209,7 +207,7 @@ class ListVercelCiInvocationsResponseInvocationsItemCompleted(BaseModel):
     model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True)
 
     completed_at: float = Field(alias="completedAt")
-    conclusion: Literal["succeeded"] | Literal["failed"] | Literal["skipped"] | NotGiven = NOT_GIVEN
+    conclusion: Literal["succeeded", "failed", "skipped"] | NotGiven = NOT_GIVEN
 
     @model_validator(mode="before")
     @classmethod
@@ -221,7 +219,7 @@ class ListVercelCiInvocationsResponseInvocationsItemCompleted(BaseModel):
 class ListVercelCiInvocationsResponseInvocationsItemSetupConclusion(BaseModel):
     """The terminal setup result. Omitted while invocation setup is still running."""
 
-    result: Literal["succeeded"] | Literal["failed"] | Literal["skipped"]
+    result: Literal["succeeded", "failed", "skipped"]
 
     @model_validator(mode="before")
     @classmethod
@@ -233,7 +231,7 @@ class ListVercelCiInvocationsResponseInvocationsItemSetupConclusion(BaseModel):
 class ListVercelCiInvocationsResponseInvocationsItemRunConclusion(BaseModel):
     """The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows."""
 
-    result: Literal["succeeded"] | Literal["failed"] | Literal["skipped"]
+    result: Literal["succeeded", "failed", "skipped"]
 
     @model_validator(mode="before")
     @classmethod
@@ -254,20 +252,20 @@ class ListVercelCiInvocationsResponseInvocationsItem(BaseModel):
     repository_key: str = Field(alias="repositoryKey")
     ref: str
     commit_sha: str = Field(alias="commitSha")
-    status: (
-        Literal["new"]
-        | Literal["skipped"]
-        | Literal["bootstrapping"]
-        | Literal["bootstrapping_failed"]
-        | Literal["snapshotted"]
-        | Literal["sandbox_named"]
-        | Literal["jobs_on_hive_clone_dispatched"]
-        | Literal["jobs_on_hive_dispatched"]
-        | Literal["jobs_on_hive_completed"]
-        | Literal["jobs_on_hive_failed"]
-        | Literal["awaiting_jobs"]
-        | Literal["completed"]
-    )
+    status: Literal[
+        "new",
+        "skipped",
+        "bootstrapping",
+        "bootstrapping_failed",
+        "snapshotted",
+        "sandbox_named",
+        "jobs_on_hive_clone_dispatched",
+        "jobs_on_hive_dispatched",
+        "jobs_on_hive_completed",
+        "jobs_on_hive_failed",
+        "awaiting_jobs",
+        "completed",
+    ]
     skipped: ListVercelCiInvocationsResponseInvocationsItemSkipped | NotGiven = NOT_GIVEN
     bootstrapping_started: (
         ListVercelCiInvocationsResponseInvocationsItemBootstrappingStarted | NotGiven
@@ -411,9 +409,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemJobDefinitionsCreated(Ba
     model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True)
 
     names: list[str]
-    source: (
-        Literal["turbo-json"] | Literal["vercel-ci-config"] | Literal["project-settings"] | NotGiven
-    ) = NOT_GIVEN
+    source: Literal["turbo-json", "vercel-ci-config", "project-settings"] | NotGiven = NOT_GIVEN
     scheduled_at: float | NotGiven = Field(NOT_GIVEN, alias="scheduledAt")
 
     @model_validator(mode="before")
@@ -427,7 +423,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemCompleted(BaseModel):
     model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True)
 
     completed_at: float = Field(alias="completedAt")
-    conclusion: Literal["succeeded"] | Literal["failed"] | Literal["skipped"] | NotGiven = NOT_GIVEN
+    conclusion: Literal["succeeded", "failed", "skipped"] | NotGiven = NOT_GIVEN
 
     @model_validator(mode="before")
     @classmethod
@@ -439,7 +435,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemCompleted(BaseModel):
 class ListVercelCiInvocationAttemptsResponseAttemptsItemSetupConclusion(BaseModel):
     """The terminal setup result. Omitted while invocation setup is still running."""
 
-    result: Literal["succeeded"] | Literal["failed"] | Literal["skipped"]
+    result: Literal["succeeded", "failed", "skipped"]
 
     @model_validator(mode="before")
     @classmethod
@@ -451,7 +447,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemSetupConclusion(BaseMode
 class ListVercelCiInvocationAttemptsResponseAttemptsItemRunConclusion(BaseModel):
     """The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows."""
 
-    result: Literal["succeeded"] | Literal["failed"] | Literal["skipped"]
+    result: Literal["succeeded", "failed", "skipped"]
 
     @model_validator(mode="before")
     @classmethod
@@ -472,20 +468,20 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItem(BaseModel):
     repository_key: str = Field(alias="repositoryKey")
     ref: str
     commit_sha: str = Field(alias="commitSha")
-    status: (
-        Literal["new"]
-        | Literal["skipped"]
-        | Literal["bootstrapping"]
-        | Literal["bootstrapping_failed"]
-        | Literal["snapshotted"]
-        | Literal["sandbox_named"]
-        | Literal["jobs_on_hive_clone_dispatched"]
-        | Literal["jobs_on_hive_dispatched"]
-        | Literal["jobs_on_hive_completed"]
-        | Literal["jobs_on_hive_failed"]
-        | Literal["awaiting_jobs"]
-        | Literal["completed"]
-    )
+    status: Literal[
+        "new",
+        "skipped",
+        "bootstrapping",
+        "bootstrapping_failed",
+        "snapshotted",
+        "sandbox_named",
+        "jobs_on_hive_clone_dispatched",
+        "jobs_on_hive_dispatched",
+        "jobs_on_hive_completed",
+        "jobs_on_hive_failed",
+        "awaiting_jobs",
+        "completed",
+    ]
     skipped: ListVercelCiInvocationAttemptsResponseAttemptsItemSkipped | NotGiven = NOT_GIVEN
     bootstrapping_started: (
         ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingStarted | NotGiven
